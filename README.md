@@ -1,9 +1,9 @@
 sing
 ====
 
-[![image](https://img.shields.io/pypi/v/sing.svg)](https://pypi.python.org/pypi/sing)
-[![image](https://img.shields.io/travis/dariosky/python-sing.svg)](https://travis-ci.org/dariosky/python-sing)
-[![Documentation Status](https://readthedocs.org/projects/python-sing/badge/?version=latest)](https://sing.readthedocs.io/en/latest/?badge=latest)
+[![pypi](https://img.shields.io/pypi/v/sing.svg)](https://pypi.python.org/pypi/sing)
+[![build](https://img.shields.io/travis/dariosky/python-sing.svg)](https://travis-ci.org/dariosky/python-sing)
+[![Documentation Status](https://readthedocs.org/projects/python-sing/badge/?version=latest)](https://python-sing.readthedocs.io/en/latest/?badge=latest)
 [![Updates](https://pyup.io/repos/github/dariosky/python-sing/shield.svg)](https://pyup.io/repos/github/dariosky/sing/)
 
 Ensure a single process is running. Using lockfile and process checking.

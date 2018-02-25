@@ -1,7 +1,7 @@
 sing
 ====
 
-|image| |image| |Documentation Status| |Updates|
+|pypi| |build| |Documentation Status| |Updates|
 
 Ensure a single process is running. Using lockfile and process checking.
 
@@ -75,11 +75,11 @@ Lot of inspiration comes from
 the same purpose. I needed PID file, and allow same process grants, so I
 made this package.
 
-.. |image| image:: https://img.shields.io/pypi/v/sing.svg
+.. |pypi| image:: https://img.shields.io/pypi/v/sing.svg
    :target: https://pypi.python.org/pypi/sing
-.. |image| image:: https://img.shields.io/travis/dariosky/python-sing.svg
+.. |build| image:: https://img.shields.io/travis/dariosky/python-sing.svg
    :target: https://travis-ci.org/dariosky/python-sing
 .. |Documentation Status| image:: https://readthedocs.org/projects/python-sing/badge/?version=latest
-   :target: https://sing.readthedocs.io/en/latest/?badge=latest
+   :target: https://python-sing.readthedocs.io/en/latest/?badge=latest
 .. |Updates| image:: https://pyup.io/repos/github/dariosky/python-sing/shield.svg
    :target: https://pyup.io/repos/github/dariosky/sing/
