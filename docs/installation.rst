@@ -38,7 +38,7 @@ Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/dariosky/sing/tarball/master
+    $ curl  -OL https://github.com/dariosky/python-sing/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/dariosky/sing
-.. _tarball: https://github.com/dariosky/sing/tarball/master
+.. _Github repo: https://github.com/dariosky/python-sing
+.. _tarball: https://github.com/dariosky/python-sing/tarball/master
