@@ -36,7 +36,7 @@ class TestMultiProcess(object):
 
     def test_different_processes(self):
         def check_im_the_one():
-            separate_proc_result = single(ensure_process_running=True)
+            separate_proc_result = single(flavor='process', ensure_process_running=True)
             q.put(separate_proc_result)
 
         q = multiprocessing.Queue()

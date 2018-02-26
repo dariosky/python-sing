@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+import atexit
 import logging
 import os
 import re
 import signal
 import sys
-import atexit
 import tempfile
+from copy import copy
 
 import psutil
 
@@ -42,8 +43,12 @@ def create_pid(pid, pid_path):
 
 def delete_pids():
     logger.debug("Removing %d created pid files" % len(_created_pids))
-    for pid_path in _created_pids:
-        os.remove(pid_path)
+    for pid_path in copy(_created_pids):
+        try:
+            os.remove(pid_path)
+            _created_pids.remove(pid_path)
+        except:
+            logger.warning("Cannot remove the PID file %s" % pid_path)
 
 
 def get_pid_path(flavor=""):
@@ -72,7 +77,7 @@ def get_pid(pid_path):
 
 def single(flavor="",
            allow_all_from_this_process=False,
-           ensure_process_running=False,
+           ensure_process_running=True,
            as_exception=False):
     pid_path = get_pid_path(flavor=flavor)
     current_pid = os.getpid()
