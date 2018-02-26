@@ -2,6 +2,7 @@
 import logging
 import os
 import re
+import signal
 import sys
 import atexit
 import tempfile
@@ -28,7 +29,9 @@ def get_exec_file_path():
 
 def get_valid_filename(s):
     s = str(s).strip().replace(' ', '_')
-    return re.sub(r'(?u)[^-\w.]', '-', s)
+    s = re.sub(r'(?u)[^-\w.]', '_', s)
+    s = s.strip('_ ')
+    return s
 
 
 def create_pid(pid, pid_path):
@@ -86,9 +89,12 @@ def single(flavor="",
             pid = pid or get_pid(pid_path)
             if not psutil.pid_exists(pid):
                 logger.warning(
-                    "The process {pid} in {pidpath} is not running."
+                    "The process {pid} in {pid_path} is not running.".format(
+                        pid=pid, pid_path=pid_path
+                    )
                 )
                 os.remove(pid_path)
+                return True
 
         if as_exception:
             raise ProcessRunningException(
@@ -101,3 +107,4 @@ def single(flavor="",
 
 
 atexit.register(delete_pids)
+signal.signal(signal.SIGTERM, lambda num, frame: delete_pids())

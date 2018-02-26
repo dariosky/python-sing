@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """Tests for `sing` package."""
+import multiprocessing
 
 from sing import single
 
@@ -29,3 +30,18 @@ def test_flavors():
 
     assert single(flavor='first') is False
     assert single(flavor='second') is False
+
+
+class TestMultiProcess(object):
+
+    def test_different_processes(self):
+        def check_im_the_one():
+            separate_proc_result = single(ensure_process_running=True)
+            q.put(separate_proc_result)
+
+        q = multiprocessing.Queue()
+        p = multiprocessing.Process(target=check_im_the_one)
+        p.start()
+        result = q.get()
+        p.terminate()
+        assert result is True
