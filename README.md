@@ -57,7 +57,7 @@ Notes
 -----
 
 -   Free software: MIT license
--   Documentation: <https://sing.readthedocs.io>.
+-   Documentation: <https://python-sing.readthedocs.io>.
 
 
 Credits
