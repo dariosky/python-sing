@@ -44,6 +44,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/dariosky/python-sing',
-    version='0.1.3',
+    version='0.1.5',
     zip_safe=False,
 )

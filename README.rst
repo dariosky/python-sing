@@ -17,7 +17,7 @@ Install
 
 .. code:: bash
 
-    pip install sing
+   pip install sing
 
 Examples
 --------
@@ -27,31 +27,31 @@ you want to be the single instance:
 
 .. code:: python
 
-    from sing import single
+   from sing import single
 
-    assert single()
+   assert single()
 
-That's it, for most of the use case, you don't need anything else. The
+That’s it, for most of the use case, you don’t need anything else. The
 assert will fail if the lock is already taken.
 
 This uses a pid lockfile, in a temporary folder to ensure this. More on
 that in ``sing.py``
 
 You may want to grant all the lock from the same process, in that case
-you'll need.
+you’ll need.
 
 .. code:: python
 
-    assert single(allow_all_from_this_process=True)
+   assert single(allow_all_from_this_process=True)
 
 You may have different subsections, and you want to have different
-locks, even if you're on the same process, both of them will return
+locks, even if you’re on the same process, both of them will return
 True:
 
 .. code:: python
 
-    single(flavor='first')
-    single(flavor='second')
+   single(flavor='first')
+   single(flavor='second')
 
 Finally, if a PID file is there, but the process died, you may want to
 grant the lock. Use the ``ensure_process_running`` to check it.
